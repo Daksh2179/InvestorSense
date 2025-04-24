@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# HuggingFace model cache
+~/.cache/huggingface/
+.cache/
+
+# VS Code
+.vscode/
+
+# OS & misc
+.DS_Store
+*.log
+*.sqlite

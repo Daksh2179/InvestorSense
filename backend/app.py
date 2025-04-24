@@ -1,12 +1,23 @@
 from flask import Flask
 from flask_cors import CORS
 
+# Import route blueprints
+from routes.portfolio import portfolio_bp
+from routes.sentiment import sentiment_bp
+from routes.forecast import forecast_bp
+from routes.sentiment import sentiment_bp
+
 app = Flask(__name__)
 CORS(app)
 
+# Register Blueprints
+app.register_blueprint(portfolio_bp, url_prefix="/api/portfolio")
+app.register_blueprint(sentiment_bp, url_prefix="/api/sentiment")
+app.register_blueprint(forecast_bp, url_prefix="/api/forecast")
+
 @app.route("/")
 def home():
-    return "InvestorSense backend running!"
+    return "InvestorSense Backend is running!"
 
 if __name__ == "__main__":
     app.run(debug=True)
